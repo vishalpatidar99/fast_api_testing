@@ -1,10 +1,10 @@
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
-from app.models import User
+from app.schemas.models import User
 from cachetools import TTLCache
 from datetime import datetime, timedelta, timezone
-from app.constants import SECRET_KEY, ALGORITHM
+from app.utils.constants import SECRET_KEY, ALGORITHM
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 cache = TTLCache(maxsize=1000, ttl=300)  # 5 minutes cache

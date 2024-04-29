@@ -18,7 +18,7 @@ class PostBase(BaseModel):
 
 
 class PostCreate(PostBase):
-    pass
+    test: str
 
 
 class Post(PostBase):
@@ -27,3 +27,8 @@ class Post(PostBase):
 
     class Config:
         orm_mode = True
+
+class UserResponse(BaseModel):
+    ack: str
+    token: str
+    token_type: str
